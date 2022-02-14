@@ -1,0 +1,63 @@
+<div class="row mt-3">
+    <div class="h1">ค้นหาสมาชิก</div>
+    <div class="input-group my-3" [formGroup]="searchForm">
+        <input type="text" class="form-control" placeholder="กรอกรหัสสมาชิก" formControlName="searchId"/>
+        <button class="input-group-text btn btn-primary" (click)="searchId()">ค้นหา</button>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-12" style="text-align: right;">
+            <a routerLink="/member/add" class="btn btn-success">เพิ่มสมาชิก</a>
+        </div>
+    </div>
+    <div class="col-md-12 mt-2">
+        <div class="row mt-3">
+            <div class="h1">สมาชิกทั้งหมด</div>
+            <div class="col-md-12 mt-2">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>รหัสสมาชิก</th>
+                            <th>ชื่อ</th>
+                            <th>กลุ่ม</th>
+                            <th>เบอร์โทรศัพท์</th>
+                            <th>ที่อยู่</th>
+                            <th>ประเภทสมาชิก</th>
+                            <th>จัดการ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let m of members">
+                            <td>{{m.memberId}}</td>
+                            <td>{{m.name}}</td>
+                            <td>{{m.studyGroup}}</td>
+                            <td>{{m.tel}}</td>
+                            <td>{{m.address}}</td>
+                            <td> <span *ngIf="m.categoryId == 1">นักเรียน</span>
+                                <span *ngIf="m.categoryId == 2">ครู เจ้าหน้าที่</span></td>
+                            <td>
+                                <a class="btn btn-info btn-sm" routerLink="/member/edit/{{m._id}}">
+                                   แก้ไข
+                                </a> &nbsp;
+                                <a class="btn btn-danger btn-sm" (click)="deleteMember(m._id)">
+                                    ลบ
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- <div class="card mb-3 card-member " >
+            <div class="card-header d-flex justify-content-between">
+                <span><b>Member ID : </b></span>
+                <span><b>Category : </b>
+                    <span *ngIf="m.categoryId == 1">นักเรียน</span>
+                    <span *ngIf="m.categoryId == 2">ครู เจ้าหน้าที่</span>
+                </span>
+            </div> -->
+          
+
+        
+        
+    </div>
+</div>

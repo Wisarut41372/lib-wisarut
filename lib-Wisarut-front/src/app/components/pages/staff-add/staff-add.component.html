@@ -1,0 +1,48 @@
+<div class="row mt-3">
+    <div class="h1">เพิ่มเจ้าหน้าที่</div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md-12">
+      <div class="container">
+        <form [formGroup]="staffForm">
+          <div class="mb-3 row">
+            <label for="name" class="col-sm-3 col-form-label">รหัสเจ้าหน้าที่</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" required formControlName="staffId">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="price" class="col-sm-3 col-form-label">รหัสผ่าน</label>
+            <div class="col-sm-9">
+                <input type="password" class="form-control" required formControlName="password">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="unitInStock" class="col-sm-3 col-form-label">ชื่อ</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" required formControlName="name">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="unitInStock" class="col-sm-3 col-form-label">เบอร์โทรศัพท์</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" required formControlName="tel">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="unitInStock" class="col-sm-3 col-form-label">ที่อยู่</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" required formControlName="address">
+            </div>
+          </div>
+          
+          <div class="mb-3 row">
+            <div class="offset-sm-3 col-sm-10">
+             <button (click)="addStaff()"  class="btn btn-primary" >บันทึก</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

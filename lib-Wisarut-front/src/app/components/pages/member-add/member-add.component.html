@@ -1,0 +1,63 @@
+<div class="row mt-3">
+    <div class="h1">เพิ่มสมาชิก</div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md-12">
+      <div class="container">
+        <form [formGroup]="memberForm">
+          <div class="mb-3 row">
+            <label for="name" class="col-sm-3 col-form-label">รหัสสมาชิก</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" required formControlName="memberId">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="price" class="col-sm-3 col-form-label">รหัสผ่าน</label>
+            <div class="col-sm-9">
+                <input type="password" class="form-control" required formControlName="password">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="unitInStock" class="col-sm-3 col-form-label">ชื่อ</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" required formControlName="name">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="unitInStock" class="col-sm-3 col-form-label">กลุ่ม</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" required formControlName="studyGroup">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="unitInStock" class="col-sm-3 col-form-label">Tel.</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" required formControlName="tel">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="unitInStock" class="col-sm-3 col-form-label">Address</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" required formControlName="address">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="unitInStock" class="col-sm-3 col-form-label">ประเภทสมาชิก</label>
+            <div class="col-sm-9">
+            <select class="form-select" aria-label="Default select example" required formControlName="categoryId">
+                <option selected>เลือกประเภท</option>
+                <option value="1">นักเรียน</option>
+                <option value="2">เจ้าหน้าที่ / ครู</option>
+            </select>
+        </div>
+          </div>
+          <div class="mb-3 row">
+            <div class="offset-sm-3 col-sm-10">
+             <button (click)="addMember()"  class="btn btn-primary" >บันทึก</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,60 @@
+<div class="row mt-3">
+  <div class="h1">เพิ่มหนังสือ</div>
+</div>
+<div class="row mt-3">
+  <div class="col-md-12">
+    <div class="container">
+      <form [formGroup]="bookForm">
+        <div class="mb-3 row">
+          <label for="name" class="col-sm-3 col-form-label">รหัสหนังสือ</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" required formControlName="bookId">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="unitInStock" class="col-sm-3 col-form-label">ชื่อ</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" required formControlName="name">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="unitInStock" class="col-sm-3 col-form-label">ผู้แต่ง</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" required formControlName="author">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="unitInStock" class="col-sm-3 col-form-label">สำนักพิมพ์</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" required formControlName="publicher">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="unitInStock" class="col-sm-3 col-form-label">ราคา</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" required formControlName="price">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="unitInStock" class="col-sm-3 col-form-label">นักเรียนยืมได้ : วัน</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control"  required formControlName="studentBorrow">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="unitInStock" class="col-sm-3 col-form-label">ครูยืมได้ : วัน</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" required formControlName="teacherBorrow">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <div class="offset-sm-3 col-sm-10">
+           <button (click)="addBook()"  class="btn btn-primary" >บันทึก</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+

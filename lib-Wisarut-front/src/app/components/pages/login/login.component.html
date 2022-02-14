@@ -1,0 +1,40 @@
+<div *ngIf="!isLoggedIn">
+  <div class="h1 text-center">
+      Login
+  </div>
+  <hr>
+  <div class="row">
+  
+      <div class="container">
+              <div class="row">
+                  <div class="col text-center" style="color:red">
+                      {{errMessage}}
+                  </div>
+              </div>     <form [formGroup]="loginForm">
+              <div class="mb-3 row">
+                  <label  for="email" class="col-sm-12 col-form-label">Staff ID</label>
+                  <div class="col-sm-12">
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                      formControlName="staffId" required>
+                  </div>
+              </div>
+              <div class="mb-3 row">
+                  <label  for="password" class="col-sm-12 col-form-label">Password</label>
+                  <div class="col-sm-12">
+                      <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" required>
+                  </div>
+              </div>
+              <div class="mb-3 row">
+                  <div class="col-sm-12">
+                      <button type="submit" class="btn btn-primary" (click)="doLogin()">Login</button>
+                  </div>
+              </div>
+          </form>
+      </div>
+  </div>
+  </div>
+  
+  <app-main *ngIf="isLoggedIn"></app-main>
+  
+  
+  

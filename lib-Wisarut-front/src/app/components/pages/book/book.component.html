@@ -1,0 +1,53 @@
+<div class="row mt-3">
+    <div class="h1">ค้นหาหนังสือ</div>
+    <div class="input-group my-3" [formGroup]="searchForm">
+        <input type="text" class="form-control" placeholder="กรอกรหัสหนังสือ" formControlName="searchId"/>
+        <button class="input-group-text btn btn-primary" (click)="searchId()">ค้นหา</button>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-12" style="text-align: right;">
+            <a routerLink="/book/add" class="btn btn-success">เพิ่มหนังสือ</a>
+        </div>
+    </div>
+    <div class="col-md-12 mt-2">
+        <div class="row mt-3">
+            <div class="h1">หนังสือทั้งหมด</div>
+            <div class="col-md-12 mt-2">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>รหัสหนังสือ</th>
+                            <th>ชื่อ</th>
+                            <th>ผู้แต่ง</th>
+                            <th>สำนักพิมพ์</th>
+                            <th>ราคา</th>
+                            <th>นักเรียนยืมได้ : วัน</th>
+                            <th>ครูยืมได้ :วัน</th>
+                            <th>จัดการ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let b of books">
+                            <tr *ngFor="let b of books">
+                                <td>{{b.bookId}}</td>
+                                <td>{{b.name}}</td>
+                                <td>{{b.author}}</td>
+                                <td>{{b.publicher}}</td>
+                                <td>{{b.price}}</td>
+                                <td>{{b.studentBorrow}}</td>
+                                <td>{{b.teacherBorrow}} </td>
+                                <td>
+                                    <a class="btn btn-info btn-sm" routerLink="/book/edit/{{b._id}}">
+                                       แก้ไข
+                                    </a> 
+                                    <a class="btn btn-danger btn-sm" (click)="deleteBook(b._id)">
+                                        ลบ
+                                    </a>
+                                </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
